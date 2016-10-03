@@ -1,0 +1,15 @@
+lang: c
+os: linux
+dist: trusty
+root: true
+
+before_install:
+  - sudo add-apt-repository ppa:gnome3-team/gnome3
+  - sudo add-apt-repository ppa:gnome3-team/gnome3-staging
+  - sudo apt-get install librest-dev libjson-glib-dev libsqlite3-dev libsoup2.4-dev intltool libgee-dev libvala-0.22-dev libglib2.0-dev automake libgee-0.8-dev
+
+script:
+  - ./autogen.sh --prefix=/app -disable-video
+  - make
+  - sudo make install
+  - find /app
