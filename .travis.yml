@@ -9,6 +9,7 @@ before_install:
   - sudo apt-get install -y librest-dev libjson-glib-dev libsqlite3-dev libsoup2.4-dev intltool libgee-dev libvala-0.22-dev libglib2.0-dev automake libgee-0.8-dev autopoint
 
 script:
+  - sed -i -e 's|0.19.7|0.17|g' configure.ac # Fix "Please upgrade to gettext-0.19.7 or newer."
   - ./autogen.sh --prefix=/app -disable-video
   - make
   - sudo make install
