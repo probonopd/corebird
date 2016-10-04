@@ -16,7 +16,7 @@ script:
   - sed -i -e 's| >= 0.7.93||g' configure.ac # Revert 2bca4d19db915c13c05a957ad73bd5508d8fc747
   - sed -i -e 's| >= 3.18||g' configure.ac # Fix "Requested 'gtk+-3.0 >= 3.18' but version of GTK+ is 3.14.15
   - sed -i -e 's| >= 2.44||g' configure.ac # Fix "Requested 'glib-2.0 >= 2.44' but version of GLib is 2.42.2
-  - ./autogen.sh --prefix=/app --disable-video --disable_gst_check
+  - ./autogen.sh --prefix=/app --disable-video --disable-gst-check
   - make
   - sudo make install
   - find /app
